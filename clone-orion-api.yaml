@@ -25,5 +25,5 @@ spec:
       name: Clone GitHub Repository
       action: git:clone
       input:
-        repositoryUrl: ${{ parameters.repoUrl }}
+        repoUrl: ${{ parameters.repoUrl }}
         branchName: ${{ parameters.branch }}
