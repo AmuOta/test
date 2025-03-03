@@ -14,7 +14,7 @@ spec:
           title: Repository URL
           type: string
           description: URL of the GitHub repository to clone.
-          default: https://github.com/AmuOta/orion-api
+          default: https://github.com/AmuOta/test
         branch:
           title: Branch Name
           type: string
