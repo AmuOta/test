@@ -1,29 +1,25 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: clone-orion-api
-  title: Clone Orion API Repository
-  description: Clones the Orion API GitHub repository into the workspace.
+  name: clone-demo
+  title: Clone a Git Repository
 spec:
-  owner: backstage-team
+  owner: your-org
   type: service
   parameters:
-    - title: Repository Details
+    - title: Repository URL
       properties:
         repoUrl:
           title: Repository URL
           type: string
-          description: URL of the GitHub repository to clone.
-          default: https://github.com/AmuOta/test
-        branch:
-          title: Branch Name
-          type: string
-          description: The branch to clone (default is main).
-          default: main
+          description: The URL of the GitHub repository to clone.
+        args:
+          title: Arguments
+          type: array
+          description: Additional arguments to pass to the Git clone command.
   steps:
     - id: clone-repo
-      name: Clone GitHub Repository
+      name: Clone Repository
       action: git:clone
       input:
-        repositoryUrl: ${{ parameters.repoUrl }}
-        branchName: ${{ parameters.branch }}
+        repoUrl: 'https://github.com/AmuOta/test'
